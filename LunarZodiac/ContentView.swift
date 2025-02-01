@@ -38,7 +38,7 @@ struct ContentView: View {
           }
 
         } label: {
-          Image(systemName: "chevron.left.square.fill")
+          Image(systemName: "chevron.left")
         }
         
         Spacer()
@@ -53,12 +53,14 @@ struct ContentView: View {
           }
           
         } label: {
-          Image(systemName: "chevron.right.square.fill")
+          Image(systemName: "chevron.right")
         }
       }
+      .buttonStyle(.borderedProminent)
+      .tint(.red)
+      .foregroundStyle(.white)
       .font(.largeTitle)
       .fontWeight(.black)
-      .foregroundStyle(.red)
       .padding(.horizontal)
     }
     .padding()
