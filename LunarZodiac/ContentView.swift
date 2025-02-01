@@ -14,7 +14,7 @@ struct ContentView: View {
   
   var body: some View {
     VStack {
-      Text("\(year)")
+      Text(String(year))
         .font(.largeTitle)
         .fontWeight(.black)
         .foregroundStyle(.red)
