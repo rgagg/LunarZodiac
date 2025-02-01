@@ -29,15 +29,14 @@ struct ContentView: View {
       
       HStack {
         Button {
-          if year <= 2021 {
-            year = 2032
-            imageNimber = 11
-          } else {
-            year -= 1
-            imageNimber -= 1
-          }
           year -= 1
           imageNimber -= 1
+          
+          if imageNimber < 0 {
+            year = 2032
+            imageNimber = 11
+          }
+
         } label: {
           Image(systemName: "chevron.left.square.fill")
         }
@@ -45,13 +44,14 @@ struct ContentView: View {
         Spacer()
         
         Button {
-          if year >= 2032 {
+          year += 1
+          imageNimber += 1
+
+          if imageNimber > 11 {
             year = 2020
             imageNimber = 0
-          } else {
-            year += 1
-            imageNimber += 1
           }
+          
         } label: {
           Image(systemName: "chevron.right.square.fill")
         }
